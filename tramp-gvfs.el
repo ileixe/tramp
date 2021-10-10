@@ -1401,7 +1401,7 @@ If FILE-SYSTEM is non-nil, return file system attributes."
 
 (defun tramp-gvfs-handle-file-name-all-completions (filename directory)
   "Like `file-name-all-completions' for Tramp files."
-  (unless (string-match-p "/" filename)
+  (unless (tramp-compat-string-search "/" filename)
     (all-completions
      filename
      (with-parsed-tramp-file-name (expand-file-name directory) nil
@@ -1574,10 +1574,13 @@ If FILE-SYSTEM is non-nil, return file system attributes."
 	(when (and parents (not (file-directory-p ldir)))
 	  (make-directory ldir parents))
 	;; Just do it.
-	(unless (or (tramp-gvfs-send-command
-		     v "gvfs-mkdir" (tramp-gvfs-url-file-name dir))
-		    (and parents (file-directory-p dir)))
-	  (tramp-error v 'file-error "Couldn't make directory %s" dir))))))
+	(or (when-let ((mkdir-succeeded
+			(tramp-gvfs-send-command
+			 v "gvfs-mkdir" (tramp-gvfs-url-file-name dir))))
+	      (set-file-modes dir (default-file-modes))
+	      mkdir-succeeded)
+	    (and parents (file-directory-p dir))
+	    (tramp-error v 'file-error "Couldn't make directory %s" dir))))))
 
 (defun tramp-gvfs-handle-rename-file
   (filename newname &optional ok-if-already-exists)
@@ -1812,10 +1815,8 @@ a downcased host name only."
 			     (message "%s" message)
 			   (pop-to-buffer (current-buffer)))
 			 (if (yes-or-no-p
-			      (concat
-			       (buffer-substring
-				(line-beginning-position) (point))
-			       " "))
+			      (buffer-substring
+			       (line-beginning-position) (point)))
 			     0 1)))))
 
 		;; When QUIT is raised, we shall return this
@@ -1832,12 +1833,13 @@ a downcased host name only."
 	result))))
 
 (defun tramp-gvfs-handler-mounted-unmounted (mount-info)
-  "Signal handler for the \"org.gtk.vfs.MountTracker.mounted\" and \
-\"org.gtk.vfs.MountTracker.unmounted\" signals."
+  "Signal handler for the gvfs \"mounted\" and \"unmounted\" signals.
+Their full names are \"org.gtk.vfs.MountTracker.mounted\" and
+\"org.gtk.vfs.MountTracker.unmounted\"."
   (ignore-errors
     (let ((signal-name (dbus-event-member-name last-input-event))
 	  (elt mount-info))
-      ;; Jump over the first elements of the mount info. Since there
+      ;; Jump over the first elements of the mount info.  Since there
       ;; were changes in the entries, we cannot access dedicated
       ;; elements.
       (while (stringp (car elt)) (setq elt (cdr elt)))
@@ -1933,7 +1935,7 @@ a downcased host name only."
 	      :session tramp-gvfs-service-daemon tramp-gvfs-path-mounttracker
 	      tramp-gvfs-interface-mounttracker tramp-gvfs-listmounts))
 	  nil)
-       ;; Jump over the first elements of the mount info. Since there
+       ;; Jump over the first elements of the mount info.  Since there
        ;; were changes in the entries, we cannot access dedicated
        ;; elements.
        (while (stringp (car elt)) (setq elt (cdr elt)))
@@ -2089,8 +2091,10 @@ It was \"a(say)\", but has changed to \"a{sv})\"."
     `(:struct ,(tramp-gvfs-dbus-string-to-byte-array mount-pref) ,mount-spec)))
 
 (defun tramp-gvfs-handler-volumeadded-volumeremoved (_dbus-name _id volume)
-  "Signal handler for the \"org.gtk.Private.RemoteVolumeMonitor.VolumeAdded\" \
-and \"org.gtk.Private.RemoteVolumeMonitor.VolumeRemoved\" signals."
+  "Signal handler for the gvfs \"VolumeAdded\" and \"VolumeRemoved\" signals.
+Their full names are
+\"org.gtk.Private.RemoteVolumeMonitor.VolumeAdded\" and
+\"org.gtk.Private.RemoteVolumeMonitor.VolumeRemoved\"."
   (ignore-errors
     (let* ((signal-name (dbus-event-member-name last-input-event))
 	   (uri (url-generic-parse-url (nth 5 volume)))

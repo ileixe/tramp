@@ -361,7 +361,7 @@ arguments to pass to the OPERATION."
     (tramp-message vec 5 "Finding a suitable `ls' command")
     (cond
      ;; Support Android derived systems where "ls" command is provided
-     ;; by GNU Coreutils. Force "ls" to print one column and set
+     ;; by GNU Coreutils.  Force "ls" to print one column and set
      ;; time-style to imitate other "ls" flavors.
      ((tramp-adb-send-command-and-check
        vec (concat "ls --time-style=long-iso "
@@ -442,7 +442,9 @@ Emacs dired can't find files."
 	  (make-directory par parents))))
     (tramp-flush-directory-properties v localname)
     (unless (or (tramp-adb-send-command-and-check
-		 v (format "mkdir %s" (tramp-shell-quote-argument localname)))
+		 v (format "mkdir -m %#o %s"
+			   (default-file-modes)
+			   (tramp-shell-quote-argument localname)))
 		(and parents (file-directory-p dir)))
       (tramp-error v 'file-error "Couldn't make directory %s" dir))))
 
@@ -546,7 +548,7 @@ But handle the case, if the \"test\" command is not available."
 	       (or (eq mustbenew 'excl)
 		   (not
 		    (y-or-n-p
-		     (format "File %s exists; overwrite anyway? " filename)))))
+		     (format "File %s exists; overwrite anyway?" filename)))))
       (tramp-error v 'file-already-exists filename))
 
     (let ((file-locked (eq (file-locked-p lockname) t))
@@ -924,7 +926,8 @@ implementation will be used."
 	      (command (plist-get args :command))
 	      (coding (plist-get args :coding))
 	      (noquery (plist-get args :noquery))
-	      (connection-type (plist-get args :connection-type))
+	      (connection-type
+	       (or (plist-get args :connection-type) process-connection-type))
 	      (filter (plist-get args :filter))
 	      (sentinel (plist-get args :sentinel))
 	      (stderr (plist-get args :stderr)))
@@ -940,7 +943,9 @@ implementation will be used."
 			   (memq (car coding) coding-system-list)
 			   (memq (cdr coding) coding-system-list)))
 	    (signal 'wrong-type-argument (list #'symbolp coding)))
-	  (unless (or (null connection-type) (memq connection-type '(pipe pty)))
+	  (when (eq connection-type t)
+	    (setq connection-type 'pty))
+	  (unless (memq connection-type '(nil pipe pty))
 	    (signal 'wrong-type-argument (list #'symbolp connection-type)))
 	  (unless (or (null filter) (functionp filter))
 	    (signal 'wrong-type-argument (list #'functionp filter)))
@@ -1065,7 +1070,7 @@ implementation will be used."
 			  p))))
 
 		;; Save exit.
-		(if (string-match-p tramp-temp-buffer-name (buffer-name))
+		(if (string-prefix-p tramp-temp-buffer-name (buffer-name))
 		    (ignore-errors
 		      (set-process-buffer (tramp-get-connection-process v) nil)
 		      (kill-buffer (current-buffer)))
@@ -1268,7 +1273,7 @@ connection if a previous connection has died for some reason."
 			   (list "-s" device "shell")
 			 (list "shell")))
 		 (p (let ((default-directory
-			    (tramp-compat-temporary-file-directory)))
+			    tramp-compat-temporary-file-directory))
 		      (apply #'start-process (tramp-get-connection-name vec) buf
 			     tramp-adb-program args)))
 		 (prompt (md5 (concat (prin1-to-string process-environment)
