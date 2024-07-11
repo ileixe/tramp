@@ -1,8 +1,0 @@
-((nil . ((tab-width . 8)
-         (fill-column . 70)
-	 (bug-reference-url-format . "https://debbugs.gnu.org/%s")))
- (change-log-mode . ((add-log-time-zone-rule . t)
-		     (fill-column . 74)
-		     (mode . bug-reference)))
- (emacs-lisp-mode . ((mode . bug-reference-prog)))
- (diff-mode . ((mode . whitespace))))
