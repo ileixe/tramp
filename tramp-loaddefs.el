@@ -836,7 +836,7 @@ If the buffer runs `dired', the buffer is reverted." t nil)
 
 (autoload 'tramp-recompile-elpa-command-completion-p "tramp-cmds" "\
 A predicate for `tramp-recompile-elpa'.
-It is completed by \"M-x TAB\" only if package.el is loaded, and
+It is completed by `M-x TAB' only if package.el is loaded, and
 Tramp is an installed ELPA package.
 
 \(fn SYMBOL BUFFER)" nil nil)
@@ -1406,17 +1406,11 @@ UU-encode the region between BEG and END.
 ;;;### (autoloads nil "trampver" "trampver.el" (0 0 0 0))
 ;;; Generated autoloads from trampver.el
 
-(defconst tramp-version "2.7.1" "\
+(defconst tramp-version "2.7.1.1" "\
 This version of Tramp.")
 
 (defconst tramp-bug-report-address "tramp-devel@gnu.org" "\
 Email address to send bug reports to.")
-
-(defconst tramp-repository-branch (ignore-errors (let ((inhibit-message t) (dir (or (locate-dominating-file (locate-library "tramp") ".git") source-directory)) debug-on-error) (and (stringp dir) (file-directory-p dir) (executable-find "git") (emacs-repository-get-branch dir)))) "\
-The repository branch of the Tramp sources.")
-
-(defconst tramp-repository-version (ignore-errors (let ((inhibit-message t) (dir (or (locate-dominating-file (locate-library "tramp") ".git") source-directory)) debug-on-error) (and (stringp dir) (file-directory-p dir) (executable-find "git") (emacs-repository-get-version dir)))) "\
-The repository revision of the Tramp sources.")
 
 ;;;***
 
