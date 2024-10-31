@@ -441,7 +441,7 @@ When this method name is used, forward all calls to Android Debug Bridge.")
 Alist of handler functions for Tramp ADB method.")
 
 (defsubst tramp-adb-file-name-p (vec-or-filename) "\
-Check if it's a VEC-OR-FILENAME for ADB." (when-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename))) (string= (tramp-file-name-method vec) tramp-adb-method)))
+Check if it's a VEC-OR-FILENAME for ADB." (and-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename)) ((string= (tramp-file-name-method vec) tramp-adb-method)))))
 
 (autoload 'tramp-adb-file-name-handler "tramp-adb" "\
 Invoke the ADB handler for OPERATION.
@@ -497,7 +497,7 @@ Enable \"androidsu\" method." nil nil)
 Alist of Tramp handler functions for superuser sessions on Android.")
 
 (defsubst tramp-androidsu-file-name-p (vec-or-filename) "\
-Check whether VEC-OR-FILENAME is for the `androidsu' method." (when-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename))) (equal (tramp-file-name-method vec) tramp-androidsu-method)))
+Check whether VEC-OR-FILENAME is for the `androidsu' method." (and-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename)) ((equal (tramp-file-name-method vec) tramp-androidsu-method)))))
 
 (autoload 'tramp-androidsu-file-name-handler "tramp-androidsu" "\
 Invoke the `androidsu' handler for OPERATION.
@@ -1084,7 +1084,7 @@ pass to the OPERATION.
 \(fn OPERATION &rest ARGS)" nil nil)
 
 (defsubst tramp-ftp-file-name-p (vec-or-filename) "\
-Check if it's a VEC-OR-FILENAME that should be forwarded to Ange-FTP." (when-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename))) (string= (tramp-file-name-method vec) tramp-ftp-method)))
+Check if it's a VEC-OR-FILENAME that should be forwarded to Ange-FTP." (and-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename)) ((string= (tramp-file-name-method vec) tramp-ftp-method)))))
 
 (tramp--with-startup (add-to-list 'tramp-foreign-file-name-handler-alist (cons #'tramp-ftp-file-name-p #'tramp-ftp-file-name-handler)))
 
@@ -1125,7 +1125,7 @@ Alist of handler functions for Tramp GVFS method.
 Operations not mentioned here will be handled by the default Emacs primitives.")
 
 (defsubst tramp-gvfs-file-name-p (vec-or-filename) "\
-Check if it's a VEC-OR-FILENAME handled by the GVFS daemon." (when-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename))) (let ((method (tramp-file-name-method vec))) (and (stringp method) (member method tramp-gvfs-methods)))))
+Check if it's a VEC-OR-FILENAME handled by the GVFS daemon." (and-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename)) (method (tramp-file-name-method vec)) ((member method tramp-gvfs-methods)))))
 
 (autoload 'tramp-gvfs-file-name-handler "tramp-gvfs" "\
 Invoke the GVFS related OPERATION and ARGS.
@@ -1191,7 +1191,7 @@ Alist of handler functions for Tramp RCLONE method.
 Operations not mentioned here will be handled by the default Emacs primitives.")
 
 (defsubst tramp-rclone-file-name-p (vec-or-filename) "\
-Check if it's a VEC-OR-FILENAME for rclone." (when-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename))) (string= (tramp-file-name-method vec) tramp-rclone-method)))
+Check if it's a VEC-OR-FILENAME for rclone." (and-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename)) ((string= (tramp-file-name-method vec) tramp-rclone-method)))))
 
 (autoload 'tramp-rclone-file-name-handler "tramp-rclone" "\
 Invoke the rclone handler for OPERATION and ARGS.
@@ -1326,7 +1326,7 @@ Alist of handler functions for Tramp SMB method.
 Operations not mentioned here will be handled by the default Emacs primitives.")
 
 (defsubst tramp-smb-file-name-p (vec-or-filename) "\
-Check if it's a VEC-OR-FILENAME for SMB servers." (when-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename))) (string= (tramp-file-name-method vec) tramp-smb-method)))
+Check if it's a VEC-OR-FILENAME for SMB servers." (and-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename)) ((string= (tramp-file-name-method vec) tramp-smb-method)))))
 
 (autoload 'tramp-smb-file-name-handler "tramp-smb" "\
 Invoke the SMB related OPERATION and ARGS.
@@ -1354,7 +1354,7 @@ Alist of handler functions for Tramp SSHFS method.
 Operations not mentioned here will be handled by the default Emacs primitives.")
 
 (defsubst tramp-sshfs-file-name-p (vec-or-filename) "\
-Check if it's a VEC-OR-FILENAME for sshfs." (when-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename))) (string= (tramp-file-name-method vec) tramp-sshfs-method)))
+Check if it's a VEC-OR-FILENAME for sshfs." (and-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename)) ((string= (tramp-file-name-method vec) tramp-sshfs-method)))))
 
 (autoload 'tramp-sshfs-file-name-handler "tramp-sshfs" "\
 Invoke the sshfs handler for OPERATION and ARGS.
@@ -1380,7 +1380,7 @@ When this method name is used, call sudoedit for editing a file.")
 Alist of handler functions for Tramp SUDOEDIT method.")
 
 (defsubst tramp-sudoedit-file-name-p (vec-or-filename) "\
-Check if it's a VEC-OR-FILENAME for SUDOEDIT." (when-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename))) (string= (tramp-file-name-method vec) tramp-sudoedit-method)))
+Check if it's a VEC-OR-FILENAME for SUDOEDIT." (and-let* ((vec (tramp-ensure-dissected-file-name vec-or-filename)) ((string= (tramp-file-name-method vec) tramp-sudoedit-method)))))
 
 (autoload 'tramp-sudoedit-file-name-handler "tramp-sudoedit" "\
 Invoke the SUDOEDIT handler for OPERATION and ARGS.
@@ -1406,7 +1406,7 @@ UU-encode the region between BEG and END.
 ;;;### (autoloads nil "trampver" "trampver.el" (0 0 0 0))
 ;;; Generated autoloads from trampver.el
 
-(defconst tramp-version "2.7.1.3" "\
+(defconst tramp-version "2.7.1.4" "\
 This version of Tramp.")
 
 (defconst tramp-bug-report-address "tramp-devel@gnu.org" "\

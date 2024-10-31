@@ -1,4 +1,4 @@
-This is docmz2hF4.info, produced by makeinfo version 6.8 from
+This is docFUwNTm.info, produced by makeinfo version 6.8 from
 tramp.texi.
 
 Copyright © 1999–2024 Free Software Foundation, Inc.
@@ -20,12 +20,12 @@ START-INFO-DIR-ENTRY
 END-INFO-DIR-ENTRY
 
 
-File: docmz2hF4.info,  Node: Top,  Next: Overview,  Prev: (dir),  Up: (dir)
+File: docFUwNTm.info,  Node: Top,  Next: Overview,  Prev: (dir),  Up: (dir)
 
-TRAMP 2.7.1.3 User Manual
+TRAMP 2.7.1.4 User Manual
 *************************
 
-This file documents TRAMP 2.7.1.3, a remote file editing package for
+This file documents TRAMP 2.7.1.4, a remote file editing package for
 Emacs.
 
    TRAMP stands for “Transparent Remote (file) Access, Multiple
@@ -127,10 +127,11 @@ How file names, directories and localnames are mangled and managed
 * Temporary directory::         Where temporary files are kept.
 * Localname deconstruction::    Breaking a localname into its components.
 * External packages::           Integration with external Lisp packages.
+* Extension packages::          Adding new methods to TRAMP.
 
 
 
-File: docmz2hF4.info,  Node: Overview,  Next: Obtaining TRAMP,  Up: Top
+File: docFUwNTm.info,  Node: Overview,  Next: Obtaining TRAMP,  Up: Top
 
 1 An overview of TRAMP
 **********************
@@ -253,7 +254,7 @@ behind the scenes when you open a file with TRAMP.
    (1) *note Temporary directory::
 
 
-File: docmz2hF4.info,  Node: Obtaining TRAMP,  Next: Quick Start Guide,  Prev: Overview,  Up: Top
+File: docFUwNTm.info,  Node: Obtaining TRAMP,  Next: Quick Start Guide,  Prev: Overview,  Up: Top
 
 2 Obtaining TRAMP
 *****************
@@ -323,7 +324,7 @@ Run ‘autoconf’ as follows to generate an up-to-date ‘configure’ script:
 how to install TRAMP.
 
 
-File: docmz2hF4.info,  Node: Quick Start Guide,  Next: Configuration,  Prev: Obtaining TRAMP,  Up: Top
+File: docFUwNTm.info,  Node: Quick Start Guide,  Next: Configuration,  Prev: Obtaining TRAMP,  Up: Top
 
 3 Short introduction how to use TRAMP
 *************************************
@@ -465,7 +466,7 @@ accessed via the ‘adb’ command.  No user or host name is needed.  The
 file name syntax is ‘/adb::/path/to/file’.
 
 
-File: docmz2hF4.info,  Node: Configuration,  Next: Usage,  Prev: Quick Start Guide,  Up: Top
+File: docFUwNTm.info,  Node: Configuration,  Next: Usage,  Prev: Quick Start Guide,  Up: Top
 
 4 Configuring TRAMP
 *******************
@@ -529,7 +530,7 @@ non-‘nil’, *Note (emacs)Directory Variables::.
 * Keeping files encrypted::     Protect remote files by encryption.
 
 
-File: docmz2hF4.info,  Node: Optional methods,  Next: Connection types,  Up: Configuration
+File: docFUwNTm.info,  Node: Optional methods,  Next: Connection types,  Up: Configuration
 
 4.1 Optional methods which must be enabled first
 ================================================
@@ -550,7 +551,7 @@ like this to your ‘.emacs’ file:
      (with-eval-after-load 'tramp (tramp-enable-method "toolbox"))
 
 
-File: docmz2hF4.info,  Node: Connection types,  Next: Inline methods,  Prev: Optional methods,  Up: Configuration
+File: docFUwNTm.info,  Node: Connection types,  Next: Inline methods,  Prev: Optional methods,  Up: Configuration
 
 4.2 Types of connections to remote hosts
 ========================================
@@ -578,7 +579,7 @@ should consider *note Password handling::, otherwise you will be
 prompted for a password for every copy action.
 
 
-File: docmz2hF4.info,  Node: Inline methods,  Next: External methods,  Prev: Connection types,  Up: Configuration
+File: docFUwNTm.info,  Node: Inline methods,  Next: External methods,  Prev: Connection types,  Up: Configuration
 
 4.3 Inline methods
 ==================
@@ -794,7 +795,7 @@ ways:
      This is an optional method, *note Optional methods::.
 
 
-File: docmz2hF4.info,  Node: External methods,  Next: GVFS-based methods,  Prev: Inline methods,  Up: Configuration
+File: docFUwNTm.info,  Node: External methods,  Next: GVFS-based methods,  Prev: Inline methods,  Up: Configuration
 
 4.4 External methods
 ====================
@@ -1020,7 +1021,7 @@ files smaller than ‘tramp-copy-size-limit’ still use inline methods.
      applicable to Android devices connected through USB.
 
 
-File: docmz2hF4.info,  Node: GVFS-based methods,  Next: FUSE-based methods,  Prev: External methods,  Up: Configuration
+File: docFUwNTm.info,  Node: GVFS-based methods,  Next: FUSE-based methods,  Prev: External methods,  Up: Configuration
 
 4.5 GVFS-based external methods
 ===============================
@@ -1116,7 +1117,7 @@ have the message bus system, D-Bus integration active, *note D-Bus:
           (customize-set-variable 'tramp-ftp-method nil)
 
 
-File: docmz2hF4.info,  Node: FUSE-based methods,  Next: Default Method,  Prev: GVFS-based methods,  Up: Configuration
+File: docFUwNTm.info,  Node: FUSE-based methods,  Next: Default Method,  Prev: GVFS-based methods,  Up: Configuration
 
 4.6 FUSE-based external methods
 ===============================
@@ -1175,7 +1176,7 @@ this is not possible, TRAMP emulates those operations otherwise.
      properties, *Note Setup of sshfs method::.
 
 
-File: docmz2hF4.info,  Node: Default Method,  Next: Default User,  Prev: FUSE-based methods,  Up: Configuration
+File: docFUwNTm.info,  Node: Default Method,  Next: Default User,  Prev: FUSE-based methods,  Up: Configuration
 
 4.7 Selecting a default method
 ==============================
@@ -1256,7 +1257,7 @@ faster than ‘plink’.  But this speed improvement is not always true.
 Windows.  Use method ‘sshx’.
 
 
-File: docmz2hF4.info,  Node: Default User,  Next: Default Host,  Prev: Default Method,  Up: Configuration
+File: docFUwNTm.info,  Node: Default User,  Next: Default Host,  Prev: Default Method,  Up: Configuration
 
 4.8 Selecting a default user
 ============================
@@ -1294,7 +1295,7 @@ File: docmz2hF4.info,  Node: Default User,  Next: Default Host,  Prev: Default M
                        '(nil nil "jonas") t)
 
 
-File: docmz2hF4.info,  Node: Default Host,  Next: Multi-hops,  Prev: Default User,  Up: Configuration
+File: docFUwNTm.info,  Node: Default Host,  Next: Multi-hops,  Prev: Default User,  Up: Configuration
 
 4.9 Selecting a default host
 ============================
@@ -1324,7 +1325,7 @@ File: docmz2hF4.info,  Node: Default Host,  Next: Multi-hops,  Prev: Default Use
      ‘/nspawn::’ and ‘/sudo::’ have the same effect.
 
 
-File: docmz2hF4.info,  Node: Multi-hops,  Next: Firewalls,  Prev: Default Host,  Up: Configuration
+File: docFUwNTm.info,  Node: Multi-hops,  Next: Firewalls,  Prev: Default Host,  Up: Configuration
 
 4.10 Connecting to a remote host using multiple hops
 ====================================================
@@ -1418,7 +1419,7 @@ only.
                        "\\`bastion\\.your\\.domain\\'")
 
 
-File: docmz2hF4.info,  Node: Firewalls,  Next: Customizing Methods,  Prev: Multi-hops,  Up: Configuration
+File: docFUwNTm.info,  Node: Firewalls,  Next: Customizing Methods,  Prev: Multi-hops,  Up: Configuration
 
 4.11 Passing firewalls
 ======================
@@ -1458,7 +1459,7 @@ option, and add ‘proxy.your.domain’ as ‘Proxy hostname’, and 3128 as
 ‘proxy.your.domain’ on port 3128.
 
 
-File: docmz2hF4.info,  Node: Customizing Methods,  Next: Customizing Completion,  Prev: Firewalls,  Up: Configuration
+File: docFUwNTm.info,  Node: Customizing Methods,  Next: Customizing Completion,  Prev: Firewalls,  Up: Configuration
 
 4.12 Using Non-Standard Methods
 ===============================
@@ -1470,6 +1471,11 @@ accessible with ‘C-h v tramp-methods <RET>’.
 
    In the ELPA archives, there are several examples of such extensions.
 They can be installed with Emacs’s Package Manager.  This includes
+
+‘incus-tramp’
+     Integration for Incus containers.  A container is accessed via
+     ‘/incus:user@container:/path/to/file’, ‘user’ and ‘container’ have
+     the same meaning as with the ‘docker’ method.
 
 ‘lxc-tramp’
      Integration for LXC containers.  A container is accessed via
@@ -1498,7 +1504,7 @@ They can be installed with Emacs’s Package Manager.  This includes
      where ‘box’ is the name of the vagrant box.
 
 
-File: docmz2hF4.info,  Node: Customizing Completion,  Next: Password handling,  Prev: Customizing Methods,  Up: Configuration
+File: docFUwNTm.info,  Node: Customizing Completion,  Next: Password handling,  Prev: Customizing Methods,  Up: Configuration
 
 4.13 Selecting config files for user/host name completion
 =========================================================
@@ -1597,7 +1603,7 @@ following conventions:
                ⇒ ((nil "toto") ("daniel" "melancholia"))
 
 
-File: docmz2hF4.info,  Node: Password handling,  Next: Connection caching,  Prev: Customizing Completion,  Up: Configuration
+File: docFUwNTm.info,  Node: Password handling,  Next: Connection caching,  Prev: Customizing Completion,  Up: Configuration
 
 4.14 Reusing passwords for several connections
 ==============================================
@@ -1681,7 +1687,7 @@ extend beyond the lifetime of the current Emacs session.  Set
    (1) On the local host, ‘run0’ uses a graphical password agent.
 
 
-File: docmz2hF4.info,  Node: Connection caching,  Next: Predefined connection information,  Prev: Password handling,  Up: Configuration
+File: docFUwNTm.info,  Node: Connection caching,  Next: Predefined connection information,  Prev: Password handling,  Up: Configuration
 
 4.15 Reusing connection related information
 ===========================================
@@ -1705,7 +1711,7 @@ remote host (via the command ‘uname -sr’), it flushes all connection
 related information for that host and creates a new entry.
 
 
-File: docmz2hF4.info,  Node: Predefined connection information,  Next: Remote programs,  Prev: Connection caching,  Up: Configuration
+File: docFUwNTm.info,  Node: Predefined connection information,  Next: Remote programs,  Prev: Connection caching,  Up: Configuration
 
 4.16 Setting own connection related information
 ===============================================
@@ -1825,7 +1831,7 @@ properties are listed here:
      want to change their values.
 
 
-File: docmz2hF4.info,  Node: Remote programs,  Next: Remote shell setup,  Prev: Predefined connection information,  Up: Configuration
+File: docFUwNTm.info,  Node: Remote programs,  Next: Remote shell setup,  Prev: Predefined connection information,  Up: Configuration
 
 4.17 How TRAMP finds and uses programs on the remote host
 =========================================================
@@ -1892,7 +1898,7 @@ tramp-cleanup-this-connection <RET>’ or friends (*note Cleanup remote
 connections::).
 
 
-File: docmz2hF4.info,  Node: Remote shell setup,  Next: Ssh setup,  Prev: Remote programs,  Up: Configuration
+File: docFUwNTm.info,  Node: Remote shell setup,  Next: Ssh setup,  Prev: Remote programs,  Up: Configuration
 
 4.18 Remote shell setup hints
 =============================
@@ -2142,7 +2148,7 @@ Interactive shell prompt
      connection information::).
 
 
-File: docmz2hF4.info,  Node: Ssh setup,  Next: FUSE setup,  Prev: Remote shell setup,  Up: Configuration
+File: docFUwNTm.info,  Node: Ssh setup,  Next: FUSE setup,  Prev: Remote shell setup,  Up: Configuration
 
 4.19 Ssh setup hints
 ====================
@@ -2337,7 +2343,7 @@ Suite of tools.
    The fallback is to start Emacs from a shell.
 
 
-File: docmz2hF4.info,  Node: FUSE setup,  Next: Android shell setup,  Prev: Ssh setup,  Up: Configuration
+File: docFUwNTm.info,  Node: FUSE setup,  Next: Android shell setup,  Prev: Ssh setup,  Up: Configuration
 
 4.20 FUSE setup hints
 =====================
@@ -2391,7 +2397,7 @@ processes, using the ‘ssh’ command.  These don’t need to be changed.
    (1) *note Temporary directory::
 
 
-File: docmz2hF4.info,  Node: Android shell setup,  Next: Kubernetes setup,  Prev: FUSE setup,  Up: Configuration
+File: docFUwNTm.info,  Node: Android shell setup,  Next: Kubernetes setup,  Prev: FUSE setup,  Up: Configuration
 
 4.21 Android shell setup hints
 ==============================
@@ -2470,7 +2476,7 @@ provided these settings are adjusted:
      /ssh:android: <RET>’.
 
 
-File: docmz2hF4.info,  Node: Kubernetes setup,  Next: Auto-save File Lock and Backup,  Prev: Android shell setup,  Up: Configuration
+File: docFUwNTm.info,  Node: Kubernetes setup,  Next: Auto-save File Lock and Backup,  Prev: Android shell setup,  Up: Configuration
 
 4.22 Kubernetes setup hints
 ===========================
@@ -2491,7 +2497,7 @@ context or namespace shall be used, configure the user options
 ‘tramp-kubernetes-context’ and ‘tramp-kubernetes-namespace’.
 
 
-File: docmz2hF4.info,  Node: Auto-save File Lock and Backup,  Next: Keeping files encrypted,  Prev: Kubernetes setup,  Up: Configuration
+File: docFUwNTm.info,  Node: Auto-save File Lock and Backup,  Next: Keeping files encrypted,  Prev: Kubernetes setup,  Up: Configuration
 
 4.23 Auto-save, File Lock and Backup configuration
 ==================================================
@@ -2588,7 +2594,7 @@ directory.  If you want to suppress this confirmation question, set user
 option ‘tramp-allow-unsafe-temporary-files’ to ‘t’.
 
 
-File: docmz2hF4.info,  Node: Keeping files encrypted,  Prev: Auto-save File Lock and Backup,  Up: Configuration
+File: docFUwNTm.info,  Node: Keeping files encrypted,  Prev: Auto-save File Lock and Backup,  Up: Configuration
 
 4.24 Protect remote files by encryption
 =======================================
@@ -2682,7 +2688,7 @@ directory.
      subdirectories will remain encrypted.
 
 
-File: docmz2hF4.info,  Node: Usage,  Next: Bug Reports,  Prev: Configuration,  Up: Top
+File: docFUwNTm.info,  Node: Usage,  Next: Bug Reports,  Prev: Configuration,  Up: Top
 
 5 Using TRAMP
 *************
@@ -2713,7 +2719,7 @@ Emacs that may cause missed prompts when using TRAMP.
 * Archive file names::          Access to files in file archives.
 
 
-File: docmz2hF4.info,  Node: File name syntax,  Next: Change file name syntax,  Up: Usage
+File: docFUwNTm.info,  Node: File name syntax,  Next: Change file name syntax,  Up: Usage
 
 5.1 TRAMP file name conventions
 ===============================
@@ -2761,7 +2767,7 @@ Default Host::.  For syntactical reasons, the default method must be
 indicated by the pseudo method ‘-’.
 
 
-File: docmz2hF4.info,  Node: Change file name syntax,  Next: File name completion,  Prev: File name syntax,  Up: Usage
+File: docFUwNTm.info,  Node: Change file name syntax,  Next: File name completion,  Prev: File name syntax,  Up: Usage
 
 5.2 Alternative file name syntax
 ================================
@@ -2796,7 +2802,7 @@ changed.
      more appropriate.  *note (elisp)Magic File Names::.
 
 
-File: docmz2hF4.info,  Node: File name completion,  Next: Ad-hoc multi-hops,  Prev: Change file name syntax,  Up: Usage
+File: docFUwNTm.info,  Node: File name completion,  Next: Ad-hoc multi-hops,  Prev: Change file name syntax,  Up: Usage
 
 5.3 File name completion
 ========================
@@ -2862,7 +2868,7 @@ Example:
           ⊣ /etc
 
 
-File: docmz2hF4.info,  Node: Ad-hoc multi-hops,  Next: Home directories,  Prev: File name completion,  Up: Usage
+File: docFUwNTm.info,  Node: Ad-hoc multi-hops,  Next: Home directories,  Prev: File name completion,  Up: Usage
 
 5.4 Declaring multiple hops in the file name
 ============================================
@@ -2944,7 +2950,7 @@ shall be taken, add a proper rule to the user option
      (add-to-list 'tramp-default-user-alist '("sudo" "remotehost" "admin"))
 
 
-File: docmz2hF4.info,  Node: Home directories,  Next: Remote processes,  Prev: Ad-hoc multi-hops,  Up: Usage
+File: docFUwNTm.info,  Node: Home directories,  Next: Remote processes,  Prev: Ad-hoc multi-hops,  Up: Usage
 
 5.5 Expanding ‘~’ to home directory
 ===================================
@@ -2989,7 +2995,7 @@ Example:
 connection property "~" must be used instead.
 
 
-File: docmz2hF4.info,  Node: Remote processes,  Next: Cleanup remote connections,  Prev: Home directories,  Up: Usage
+File: docFUwNTm.info,  Node: Remote processes,  Next: Cleanup remote connections,  Prev: Home directories,  Up: Usage
 
 5.6 Integration with other Emacs packages
 =========================================
@@ -3477,7 +3483,7 @@ connection property "direct-async-process".  This is still supported but
 deprecated, and it will be removed in a future TRAMP version.
 
 
-File: docmz2hF4.info,  Node: Cleanup remote connections,  Next: Renaming remote files,  Prev: Remote processes,  Up: Usage
+File: docFUwNTm.info,  Node: Cleanup remote connections,  Next: Renaming remote files,  Prev: Remote processes,  Up: Usage
 
 5.7 Cleanup remote connections
 ==============================
@@ -3527,7 +3533,7 @@ TRAMP provides several ways to flush remote connections.
      buffers, and buffers related to a remote process are cleaned up.
 
 
-File: docmz2hF4.info,  Node: Renaming remote files,  Next: Archive file names,  Prev: Cleanup remote connections,  Up: Usage
+File: docFUwNTm.info,  Node: Renaming remote files,  Next: Archive file names,  Prev: Cleanup remote connections,  Up: Usage
 
 5.8 Renaming remote files
 =========================
@@ -3619,7 +3625,7 @@ anymore.
      ‘tramp-rename-these-files’ must be confirmed.
 
 
-File: docmz2hF4.info,  Node: Archive file names,  Prev: Renaming remote files,  Up: Usage
+File: docFUwNTm.info,  Node: Archive file names,  Prev: Renaming remote files,  Up: Usage
 
 5.9 Archive file names
 ======================
@@ -3748,7 +3754,7 @@ to your init file:
      (customize-set-variable 'tramp-archive-enabled nil)
 
 
-File: docmz2hF4.info,  Node: Bug Reports,  Next: Frequently Asked Questions,  Prev: Usage,  Up: Top
+File: docFUwNTm.info,  Node: Bug Reports,  Next: Frequently Asked Questions,  Prev: Usage,  Up: Top
 
 6 Reporting Bugs and Problems
 *****************************
@@ -3823,8 +3829,18 @@ stage.  Also note that a verbosity level of 6 or greater, the contents
 of files and directories will be included in the debug buffer.
 Passwords typed in TRAMP will never be included there.
 
+   If you find, that using TRAMP with ‘emacs -Q’ doesn’t cause any
+problem, you might check your init file for the suspicious configuration
+by bisecting it.  That is, comment out about half of the init file, and
+check whether the problem still arises when calling ‘emacs’.  If yes,
+comment out half of the still active code.  Otherwise, comment out the
+active code, and uncomment the just commented code.
+
+   Call ‘emacs’, again.  Reiterate, until you find the suspicious
+configuaration.
+
 
-File: docmz2hF4.info,  Node: Frequently Asked Questions,  Next: Files directories and localnames,  Prev: Bug Reports,  Up: Top
+File: docFUwNTm.info,  Node: Frequently Asked Questions,  Next: Files directories and localnames,  Prev: Bug Reports,  Up: Top
 
 7 Frequently Asked Questions
 ****************************
@@ -4579,7 +4595,7 @@ File: docmz2hF4.info,  Node: Frequently Asked Questions,  Next: Files directorie
      combination of ‘ssh’ and ‘scp’ or other work-alike programs.
 
 
-File: docmz2hF4.info,  Node: Files directories and localnames,  Next: Traces and Profiles,  Prev: Frequently Asked Questions,  Up: Top
+File: docFUwNTm.info,  Node: Files directories and localnames,  Next: Traces and Profiles,  Prev: Frequently Asked Questions,  Up: Top
 
 8 How file names, directories and localnames are mangled and managed
 ********************************************************************
@@ -4589,9 +4605,10 @@ File: docmz2hF4.info,  Node: Files directories and localnames,  Next: Traces and
 * Temporary directory::         Where temporary files are kept.
 * Localname deconstruction::    Splitting a localname into its component parts.
 * External packages::           Integrating with external Lisp packages.
+* Extension packages::          Adding new methods to TRAMP.
 
 
-File: docmz2hF4.info,  Node: Temporary directory,  Next: Localname deconstruction,  Up: Files directories and localnames
+File: docFUwNTm.info,  Node: Temporary directory,  Next: Localname deconstruction,  Up: Files directories and localnames
 
 8.1 Where temporary files are kept
 ==================================
@@ -4618,7 +4635,7 @@ variable ‘tramp-temp-name-prefix’ temporarily:
      ⇒ "/tmp/my-prefix.HDfgDZ"
 
 
-File: docmz2hF4.info,  Node: Localname deconstruction,  Next: External packages,  Prev: Temporary directory,  Up: Files directories and localnames
+File: docFUwNTm.info,  Node: Localname deconstruction,  Next: External packages,  Prev: Temporary directory,  Up: Files directories and localnames
 
 8.2 Splitting a localname into its component parts
 ==================================================
@@ -4633,7 +4650,7 @@ By relying on the original handlers for localnames, TRAMP benefits from
 platform specific hacks to the original handlers.
 
 
-File: docmz2hF4.info,  Node: External packages,  Prev: Localname deconstruction,  Up: Files directories and localnames
+File: docFUwNTm.info,  Node: External packages,  Next: Extension packages,  Prev: Localname deconstruction,  Up: Files directories and localnames
 
 8.3 Integrating with external Lisp packages
 ===========================================
@@ -4686,8 +4703,8 @@ its process sentinel with this code:
 directory, it is most likely sufficient to make the ‘default-directory’
 of the process buffer as the root directory.
 
-8.3.3 Timers
-------------
+8.3.3 Timers, process filters, process sentinels, redisplay
+-----------------------------------------------------------
 
 Timers run asynchronously at any time when Emacs is waiting for sending
 a string to a process, or waiting for process output.  They can run any
@@ -4701,8 +4718,113 @@ as follows:
      (ignore-error 'remote-file-error
        ...)
 
+   A similar problem could happen with process filters, process
+sentinels, and redisplay (updating the mode line).
+
 
-File: docmz2hF4.info,  Node: Traces and Profiles,  Next: GNU Free Documentation License,  Prev: Files directories and localnames,  Up: Top
+File: docFUwNTm.info,  Node: Extension packages,  Prev: External packages,  Up: Files directories and localnames
+
+8.4 Adding new methods to TRAMP
+===============================
+
+There are two ways to add new methods to TRAMP: writing a new backend
+including an own file name handler, or adding the new method, using the
+existing ‘tramp-sh-file-name-handler’.  The former shall happen inside
+the TRAMP repository, and it isn’t discussed here.  The latter means
+usually a new ELPA package.  *note Customizing Methods:: for some
+examples.
+
+8.4.1 Writing an own ELPA package
+---------------------------------
+
+An external ELPA package ‘foo-tramp.el’, which intends to provide a new
+TRAMP method, say ‘foo’, must add this new method to the variable
+‘tramp-methods’.  This variable is an alist with elements ‘(NAME PARAM1
+PARAM2 ...)’.
+
+   NAME is the method name, "foo" in this case.  PARAMx is a pair of the
+form ‘(KEY VALUE)’.  See the docstring of variable ‘tramp-methods’ for
+possible KEYs and VALUEs.  An example would be
+
+     (add-to-list
+      'tramp-methods
+      `("foo"
+        (tramp-login-program ,foo-tramp-executable)
+        (tramp-login-args (("exec") ("%h") ("--") ("su - %u")))
+        (tramp-remote-shell "/bin/sh")
+        (tramp-remote-shell-args ("-i" "-c"))))
+
+   ‘foo-tramp-executable’ in this example would be a Lisp constant,
+which is the program name of ‘foo’.
+
+   Another initialization could tell TRAMP which are the default user
+and host name for method ‘foo’.  This is done by calling
+‘tramp-set-completion-function’:
+
+     (tramp-set-completion-function
+      "foo"
+      '((tramp-foo--completion-function ARG)))
+
+   ‘tramp-foo--completion-function’ is a function, which returns
+completion candidates.  ARG, a string, is the argument for the
+completion function, for example a file name to read from.  *note
+Customizing Completion:: for details.
+
+   Finally, it might also be helpful to define default user or host
+names for method ‘foo’, in case a remote file name leaves them empty.
+This can be performed by calling
+
+     (add-to-list 'tramp-default-user-alist '("foo" nil "root"))
+     (add-to-list 'tramp-default-host-alist '("foo" nil "localhost"))
+
+   *note Default User:: and *note Default Host:: explaining the user
+options ‘tramp-default-user-alist’ and ‘tramp-default-host-alist’.
+
+8.4.2 Making a customized method optional
+-----------------------------------------
+
+The settings of the previous subsection are global in the package
+‘foo-tramp.el’, meaning they are activated when loading ‘foo-tramp’.
+Sometimes, it is desired to make these settings available without
+loading the whole package ‘foo-tramp’, but declaring the new method
+‘foo’ as optional method only.  In this case, declare a function
+‘tramp-enable-foo-method’ which collects the initialization.  This
+function must be auto loaded.
+
+     ;;;###autoload
+     (defun tramp-enable-foo-method ()
+       (add-to-list 'tramp-methods '("foo" ...))
+       (tramp-set-completion-function "foo" ...)
+       (add-to-list 'tramp-default-user-alist '("foo" ...))
+       (add-to-list 'tramp-default-host-alist '("foo" ...)))
+
+   Then, you can activate method ‘foo’ by calling ‘M-x
+tramp-enable-method <RET> foo <RET>’.  *note Optional methods::.
+
+8.4.3 Activating a customized method without loading the package
+----------------------------------------------------------------
+
+If you want to make method ‘foo’ known after loading TRAMP, without
+loading the package ‘foo-tramp.el’, you must autoload the implementation
+of function ‘tramp-enable-foo-method’.  Add the following code in
+‘foo-tramp.el’:
+
+     ;;;###autoload
+     (progn
+       (defun tramp-enable-foo-method ()
+         (add-to-list 'tramp-methods '("foo" ...))
+         (tramp-set-completion-function "foo" ...)
+         (add-to-list 'tramp-default-user-alist '("foo" ...))
+         (add-to-list 'tramp-default-host-alist '("foo" ...))))
+
+     ;;;###autoload
+     (with-eval-after-load 'tramp (tramp-enable-method "foo"))
+
+   The trick is to wrap the function definition of
+‘tramp-enable-foo-method’ with ‘progn’ for the ‘;;;###autoload’ cookie.
+
+
+File: docFUwNTm.info,  Node: Traces and Profiles,  Next: GNU Free Documentation License,  Prev: Files directories and localnames,  Up: Top
 
 9 How to Customize Traces
 *************************
@@ -4765,7 +4887,7 @@ strings), and the entry and exit messages for the function
 analyzing the remote commands for performance analysis.
 
 
-File: docmz2hF4.info,  Node: GNU Free Documentation License,  Next: Function Index,  Prev: Traces and Profiles,  Up: Top
+File: docFUwNTm.info,  Node: GNU Free Documentation License,  Next: Function Index,  Prev: Traces and Profiles,  Up: Top
 
 Appendix A GNU Free Documentation License
 *****************************************
@@ -5247,7 +5369,7 @@ software license, such as the GNU General Public License, to permit
 their use in free software.
 
 
-File: docmz2hF4.info,  Node: Function Index,  Next: Variable Index,  Prev: GNU Free Documentation License,  Up: Top
+File: docFUwNTm.info,  Node: Function Index,  Next: Variable Index,  Prev: GNU Free Documentation License,  Up: Top
 
 Function Index
 **************
@@ -5318,7 +5440,7 @@ Function Index
                                                               (line 737)
 
 
-File: docmz2hF4.info,  Node: Variable Index,  Next: Concept Index,  Prev: Function Index,  Up: Top
+File: docFUwNTm.info,  Node: Variable Index,  Next: Concept Index,  Prev: Function Index,  Up: Top
 
 Variable Index
 **************
@@ -5529,7 +5651,7 @@ Variable Index
                                                               (line 352)
 
 
-File: docmz2hF4.info,  Node: Concept Index,  Prev: Variable Index,  Up: Top
+File: docFUwNTm.info,  Node: Concept Index,  Prev: Variable Index,  Up: Top
 
 Concept Index
 *************
@@ -5677,7 +5799,7 @@ Concept Index
 * gdb:                                   Remote processes.    (line 267)
 * gdrive method:                         Quick Start Guide.   (line 109)
 * gdrive method <1>:                     GVFS-based methods.  (line  34)
-* git method:                            Customizing Methods. (line  25)
+* git method:                            Customizing Methods. (line  30)
 * GNOME Online Accounts:                 Quick Start Guide.   (line 109)
 * GNOME Online Accounts <1>:             GVFS-based methods.  (line  34)
 * GNU ELPA:                              Obtaining TRAMP.     (line   6)
@@ -5686,9 +5808,10 @@ Concept Index
 * gud.el:                                Remote processes.    (line 267)
 * gvfs-based methods:                    Quick Start Guide.   (line  99)
 * gvfs-based methods <1>:                GVFS-based methods.  (line   6)
-* hdfs method:                           Customizing Methods. (line  31)
+* hdfs method:                           Customizing Methods. (line  36)
 * how it works:                          Overview.            (line  44)
 * http tunnel:                           Firewalls.           (line   6)
+* incus method:                          Customizing Methods. (line  15)
 * inline methods:                        Inline methods.      (line   6)
 * iso file archive suffix:               Archive file names.  (line  55)
 * jar file archive suffix:               Archive file names.  (line  57)
@@ -5697,8 +5820,8 @@ Concept Index
 * krlogin method:                        Inline methods.      (line 123)
 * ksu method:                            Inline methods.      (line 130)
 * kubernetes method:                     Inline methods.      (line 170)
-* lxc method:                            Customizing Methods. (line  15)
-* lxd method:                            Customizing Methods. (line  20)
+* lxc method:                            Customizing Methods. (line  20)
+* lxd method:                            Customizing Methods. (line  25)
 * lzh file archive suffix:               Archive file names.  (line  59)
 * LZH file archive suffix:               Archive file names.  (line  59)
 * media:                                 GVFS-based methods.  (line  47)
@@ -5726,13 +5849,14 @@ Concept Index
 * method ftp:                            External methods.    (line 131)
 * method gdrive:                         Quick Start Guide.   (line 109)
 * method gdrive <1>:                     GVFS-based methods.  (line  34)
-* method git:                            Customizing Methods. (line  25)
-* method hdfs:                           Customizing Methods. (line  31)
+* method git:                            Customizing Methods. (line  30)
+* method hdfs:                           Customizing Methods. (line  36)
+* method incus:                          Customizing Methods. (line  15)
 * method krlogin:                        Inline methods.      (line 123)
 * method ksu:                            Inline methods.      (line 130)
 * method kubernetes:                     Inline methods.      (line 170)
-* method lxc:                            Customizing Methods. (line  15)
-* method lxd:                            Customizing Methods. (line  20)
+* method lxc:                            Customizing Methods. (line  20)
+* method lxd:                            Customizing Methods. (line  25)
 * method mtp:                            Quick Start Guide.   (line  99)
 * method mtp <1>:                        GVFS-based methods.  (line  47)
 * method nc:                             External methods.    (line 102)
@@ -5781,7 +5905,7 @@ Concept Index
 * method sudoedit <1>:                   External methods.    (line 111)
 * method telnet:                         Inline methods.      (line  50)
 * method toolbox:                        Inline methods.      (line 179)
-* method vagrant:                        Customizing Methods. (line  36)
+* method vagrant:                        Customizing Methods. (line  41)
 * methods, external:                     External methods.    (line   6)
 * methods, fuse:                         Quick Start Guide.   (line 120)
 * methods, fuse <1>:                     FUSE-based methods.  (line   6)
@@ -5913,7 +6037,7 @@ Concept Index
 * using non-standard methods:            Customizing Methods. (line   6)
 * using TRAMP:                           Usage.               (line   6)
 * uu encoding:                           Inline methods.      (line  16)
-* vagrant method:                        Customizing Methods. (line  36)
+* vagrant method:                        Customizing Methods. (line  41)
 * warc file archive suffix:              Archive file names.  (line  79)
 * WebDAV:                                GVFS-based methods.  (line  24)
 * winexe:                                Remote processes.    (line 298)
@@ -5928,77 +6052,78 @@ Concept Index
 
 Tag Table:
 Node: Top937
-Node: Overview5835
-Ref: Overview-Footnote-111238
-Node: Obtaining TRAMP11274
-Node: Quick Start Guide13831
-Ref: Quick Start Guide File name syntax14616
-Ref: Quick Start Guide ssh and plink methods15712
-Ref: Quick Start Guide su, sudo, doas, run0, androidsu and sg methods16259
-Ref: Quick Start Guide Combining ssh, plink, su, sudo, doas and run0 methods17153
-Ref: Quick Start Guide sudoedit method17748
-Ref: Quick Start Guide smb method18158
-Ref: Quick Start Guide GVFS-based methods18489
-Ref: Quick Start Guide GNOME Online Accounts based methods18935
-Ref: Quick Start Guide FUSE-based methods19477
-Ref: Quick Start Guide Android20350
-Node: Configuration20584
-Node: Optional methods23606
-Node: Connection types24508
-Node: Inline methods25954
-Node: External methods33925
-Node: GVFS-based methods43472
-Node: FUSE-based methods47630
-Node: Default Method50241
-Ref: Default Method-Footnote-153464
-Node: Default User53574
-Node: Default Host55107
-Node: Multi-hops56384
-Node: Firewalls60583
-Node: Customizing Methods62061
-Node: Customizing Completion63851
-Node: Password handling67345
-Ref: Using an authentication file67819
-Ref: Caching passwords70220
-Ref: Password handling-Footnote-170774
-Node: Connection caching70845
-Node: Predefined connection information71779
-Node: Remote programs76533
-Node: Remote shell setup79450
-Node: Ssh setup90195
-Ref: Using ssh connection sharing92100
-Node: FUSE setup98479
-Ref: Setup of rclone method99467
-Ref: Setup of sshfs method100049
-Ref: FUSE setup-Footnote-1100543
-Node: Android shell setup100579
-Node: Kubernetes setup103883
-Node: Auto-save File Lock and Backup104873
-Node: Keeping files encrypted109351
-Node: Usage113998
-Node: File name syntax115424
-Node: Change file name syntax117436
-Node: File name completion118870
-Node: Ad-hoc multi-hops121565
-Node: Home directories125281
-Node: Remote processes127016
-Ref: Managing remote shell history133049
-Ref: Running a debugger on a remote host138673
-Ref: Improving performance of asynchronous remote processes145627
-Node: Cleanup remote connections148513
-Node: Renaming remote files150862
-Node: Archive file names155097
-Node: Bug Reports159853
-Node: Frequently Asked Questions163235
-Node: Files directories and localnames193067
-Node: Temporary directory193571
-Node: Localname deconstruction194675
-Node: External packages195360
-Node: Traces and Profiles198166
-Node: GNU Free Documentation License200635
-Node: Function Index226012
-Node: Variable Index230466
-Node: Concept Index245150
+Node: Overview5896
+Ref: Overview-Footnote-111299
+Node: Obtaining TRAMP11335
+Node: Quick Start Guide13892
+Ref: Quick Start Guide File name syntax14677
+Ref: Quick Start Guide ssh and plink methods15773
+Ref: Quick Start Guide su, sudo, doas, run0, androidsu and sg methods16320
+Ref: Quick Start Guide Combining ssh, plink, su, sudo, doas and run0 methods17214
+Ref: Quick Start Guide sudoedit method17809
+Ref: Quick Start Guide smb method18219
+Ref: Quick Start Guide GVFS-based methods18550
+Ref: Quick Start Guide GNOME Online Accounts based methods18996
+Ref: Quick Start Guide FUSE-based methods19538
+Ref: Quick Start Guide Android20411
+Node: Configuration20645
+Node: Optional methods23667
+Node: Connection types24569
+Node: Inline methods26015
+Node: External methods33986
+Node: GVFS-based methods43533
+Node: FUSE-based methods47691
+Node: Default Method50302
+Ref: Default Method-Footnote-153525
+Node: Default User53635
+Node: Default Host55168
+Node: Multi-hops56445
+Node: Firewalls60644
+Node: Customizing Methods62122
+Node: Customizing Completion64138
+Node: Password handling67632
+Ref: Using an authentication file68106
+Ref: Caching passwords70507
+Ref: Password handling-Footnote-171061
+Node: Connection caching71132
+Node: Predefined connection information72066
+Node: Remote programs76820
+Node: Remote shell setup79737
+Node: Ssh setup90482
+Ref: Using ssh connection sharing92387
+Node: FUSE setup98766
+Ref: Setup of rclone method99754
+Ref: Setup of sshfs method100336
+Ref: FUSE setup-Footnote-1100830
+Node: Android shell setup100866
+Node: Kubernetes setup104170
+Node: Auto-save File Lock and Backup105160
+Node: Keeping files encrypted109638
+Node: Usage114285
+Node: File name syntax115711
+Node: Change file name syntax117723
+Node: File name completion119157
+Node: Ad-hoc multi-hops121852
+Node: Home directories125568
+Node: Remote processes127303
+Ref: Managing remote shell history133336
+Ref: Running a debugger on a remote host138960
+Ref: Improving performance of asynchronous remote processes145914
+Node: Cleanup remote connections148800
+Node: Renaming remote files151149
+Node: Archive file names155384
+Node: Bug Reports160140
+Node: Frequently Asked Questions164025
+Node: Files directories and localnames193857
+Node: Temporary directory194422
+Node: Localname deconstruction195526
+Node: External packages196211
+Node: Extension packages199254
+Node: Traces and Profiles203477
+Node: GNU Free Documentation License205946
+Node: Function Index231323
+Node: Variable Index235777
+Node: Concept Index250461
 
 End Tag Table
 
