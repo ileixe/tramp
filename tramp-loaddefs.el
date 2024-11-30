@@ -1268,7 +1268,7 @@ Enable \"krlogin\" method." nil nil)
 (autoload 'tramp-enable-fcp-method "tramp-sh" "\
 Enable \"fcp\" method." nil nil)
 
-(defconst tramp-actions-before-shell '((tramp-login-prompt-regexp tramp-action-login) (tramp-password-prompt-regexp tramp-action-password) (tramp-otp-password-prompt-regexp tramp-action-otp-password) (tramp-wrong-passwd-regexp tramp-action-permission-denied) (shell-prompt-pattern tramp-action-succeed) (tramp-shell-prompt-pattern tramp-action-succeed) (tramp-yesno-prompt-regexp tramp-action-yesno) (tramp-yn-prompt-regexp tramp-action-yn) (tramp-terminal-prompt-regexp tramp-action-terminal) (tramp-antispoof-regexp tramp-action-confirm-message) (tramp-security-key-confirm-regexp tramp-action-show-and-confirm-message) (tramp-security-key-pin-regexp tramp-action-otp-password) (tramp-process-alive-regexp tramp-action-process-alive)) "\
+(defconst tramp-actions-before-shell '((tramp-login-prompt-regexp tramp-action-login) (tramp-password-prompt-regexp tramp-action-password) (tramp-otp-password-prompt-regexp tramp-action-otp-password) (tramp-fingerprint-prompt-regexp tramp-action-fingerprint) (tramp-wrong-passwd-regexp tramp-action-permission-denied) (shell-prompt-pattern tramp-action-succeed) (tramp-shell-prompt-pattern tramp-action-succeed) (tramp-yesno-prompt-regexp tramp-action-yesno) (tramp-yn-prompt-regexp tramp-action-yn) (tramp-terminal-prompt-regexp tramp-action-terminal) (tramp-antispoof-regexp tramp-action-confirm-message) (tramp-security-key-confirm-regexp tramp-action-show-and-confirm-message) (tramp-security-key-pin-regexp tramp-action-otp-password) (tramp-process-alive-regexp tramp-action-process-alive)) "\
 List of pattern/action pairs.
 Whenever a pattern matches, the corresponding action is performed.
 Each item looks like (PATTERN ACTION).
@@ -1406,7 +1406,7 @@ UU-encode the region between BEG and END.
 ;;;### (autoloads nil "trampver" "trampver.el" (0 0 0 0))
 ;;; Generated autoloads from trampver.el
 
-(defconst tramp-version "2.7.1.4" "\
+(defconst tramp-version "2.7.1.5" "\
 This version of Tramp.")
 
 (defconst tramp-bug-report-address "tramp-devel@gnu.org" "\
