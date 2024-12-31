@@ -535,6 +535,11 @@ arguments to pass to the OPERATION.
 
 \(fn OPERATION &rest ARGS)" nil nil)
 
+(autoload 'tramp-archive-file-name-p "tramp-archive" "\
+Return t if NAME is a string with archive file name syntax.
+
+\(fn NAME)" nil nil)
+
 ;;;***
 
 ;;;### (autoloads nil "tramp-cache" "tramp-cache.el" (0 0 0 0))
@@ -1406,7 +1411,7 @@ UU-encode the region between BEG and END.
 ;;;### (autoloads nil "trampver" "trampver.el" (0 0 0 0))
 ;;; Generated autoloads from trampver.el
 
-(defconst tramp-version "2.7.1.5" "\
+(defconst tramp-version "2.7.2" "\
 This version of Tramp.")
 
 (defconst tramp-bug-report-address "tramp-devel@gnu.org" "\
