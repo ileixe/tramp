@@ -573,20 +573,20 @@ see its function help for a description of the format."
 		(tramp-copy-file-name (("%h" ":") ("%f")))
                 (tramp-copy-recursive t)))
 
- (add-to-list 'tramp-methods
-              `(,tramp-kubernetes-method
-                (tramp-login-program ,tramp-kubernetes-program)
-                (tramp-login-args (("%x") ; context and namespace.
-				   ("exec")
-                                   ("-c" "%a") ; container.
-                                   ("%h")
-                                   ("-it")
-                                   ("--")
-			           ("%l")))
-		(tramp-direct-async (,tramp-default-remote-shell "-c"))
-                (tramp-remote-shell ,tramp-default-remote-shell)
-                (tramp-remote-shell-login ("-l"))
-                (tramp-remote-shell-args ("-i" "-c"))))
+(add-to-list 'tramp-methods
+             `(,tramp-kubernetes-method
+               (tramp-login-program ,tramp-kubernetes-program)
+               (tramp-login-args
+                (("%x")                    ; Context and namespace.
+                 ("exec")
+                 ("-c" "%a")               ; Container.
+                 ("%h")                    ; Hostname.
+                 ("-it")
+                 ("--")
+                 ("sudo" "-u" "%u" "/bin/bash"))) ; Start shell as user.
+               (tramp-remote-shell "/bin/bash")
+               (tramp-remote-shell-login ("-l"))
+               (tramp-remote-shell-args ("-i" "-c"))))
 
  (add-to-list 'tramp-completion-multi-hop-methods tramp-docker-method)
  (add-to-list 'tramp-completion-multi-hop-methods tramp-podman-method)
